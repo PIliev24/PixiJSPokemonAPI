@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Battle Arena</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <script src="/pixiLogic.js" defer></script>
+    <link href="/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="PlayerBox">
+        <h2 id="playerPokemonName"><%= name %></h2>
+        <div>
+            <button onclick="playerTurnToAttack()" class="moveButton"><%= moveOne %></button>
+            <button onclick="playerTurnToAttack()" class="moveButton"><%= moveTwo %></button>
+            <button onclick="playerTurnToAttack()" class="moveButton"><%= moveThree %></button>
+            <button onclick="playerTurnToAttack()" class="moveButton"><%= moveFour %></button>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: inline-block;">
+            <p>Player Health: </p>
+            <p id="hp"><%= hp %></p>
+            <progress id="playerHealthBar" min="0" value="100" max="100"></progress>
+        </div>
+        <div style="display: inline-block;">
+            <p>Enemy Health: </p>
+            <progress id="enemyHealthBar" min="0" value="100" max="100"></progress>
+        </div>
+    </div>
+
+    <div id="gameDiv">
+    </div>
+
+    <!-- This div is to keep the data saved. From the p fields we get the needed information for the PIXI file -->
+    <div style="display: none;">
+
+        <p id="imageUrl"><%= imageUrl %></p>
+        <p id="speed"><%= speed %></p>
+        <p id="defense"><%= defense %></p>
+        <p id="attack"><%= attack %></p>
+        <!-- <p id="hp"><%= hp %></p> -->
+
+        <p id="enemyImageUrl"><%= enemyImageUrl %></p>
+        <p id="enemySpeed"><%= enemySpeed %></p>
+        <p id="enemyDefense"><%= enemyDefense %></p>
+        <p id="enemyAttack"><%= enemyAttack %></p>
+        <p id="enemyHp"><%= enemyHp %></p>
+
+    </div>
+</body>
+
+</html>
